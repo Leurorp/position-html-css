@@ -1,0 +1,18 @@
+.absolute { position:absolute; border:1px solid red; height:60%; width:70%;
+    top:30px; left:30px;}
+body {padding:10px}
+.fixed { position:fixed; border:3px solid red; height:8%; width:50%;
+    bottom:10px; right:20px; background-color: rgb(66, 3, 3);}
+h1,h3 {text-align: center;}
+head, .n1 {font-size: 19px; padding: 20px; background-color: blanchedalmond;}
+.logo {color:rgb(209, 24, 24); margin-left:20px; font-size: 26px; font-weight:bolder; }
+p {font-size: 19px; padding: 10px}
+.relative { position:relative; border:1px solid red; height:60%; width:70%;
+    top:10px; left:20px}
+.static {position:static; border:1px solid red; height:60%; width:70%;
+    margin-top:10px; margin-left:20px}
+.stato {border-radius:20px; background-color: black;
+    color:rgb(177, 241, 220); padding:10px; font-size: 20px;}
+.sticky {position: -webkit-sticky; position: sticky; top: 10px; padding: 5px; background-color: #0c4d0c;
+         border: 5px solid #82e685;}
+.text {color:antiquewhite; font-style: italic;}

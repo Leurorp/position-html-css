@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>position css html</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+  <div style="background-color: rgb(33, 32, 32); padding: 30px;">
+    <canvas id="demo" width="60" height="60" style="margin-left:50px">
+    </canvas>
+    <script>
+      let canvas = document.getElementById("demo");
+      let context = canvas.getContext("2d");
+      context.beginPath();
+      context.scale(0.5, 0.3);
+      context.moveTo(10, 34);
+      context.lineTo(10, 190);
+      context.lineTo(110, 190);
+      context.lineWidth = 30;
+      context.strokeStyle = "#0000cd";
+      context, lineCap = "round";
+      context.stroke();
+
+      context.beginPath();
+      context.lineWidth = 15;
+      context.strokeStyle = "#dc143c";
+      context.moveTo(42, 155);
+      context.lineTo(85, 155);
+      context.stroke();
+
+      context.beginPath();
+      context.arc(86, 125, 30, 0.5 * Math.PI, 1.5 * Math.PI, true);
+      context.lineCap = "round";
+      context.stroke();
+
+      context.beginPath();
+      context.lineCap = "square";
+      context.moveTo(80, 95);
+      context.lineTo(60, 95);
+      context.stroke();
+
+      context.beginPath();
+      context.arc(86, 78, 17, 0.5 * Math.PI, 1.5 * Math.PI, true);
+      context.lineCap = "round";
+      context.stroke();
+
+      context.beginPath();
+      context.lineCap = "square";
+      context.moveTo(80, 60);
+      context.lineTo(43, 60);
+      context.stroke();
+
+      context.beginPath();
+      context.lineCap = "square";
+      context.moveTo(43, 60);
+      context.lineTo(43, 155);
+      context.stroke();   
+    </script>
+    <span class="logo"> WEB PRODUCTION </span>
+  </div>
+  <hr>
+  <div class="container p-3 my-3">
+    <h1>Positon CSS</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+    <head>
+      <p class="n1">Positon è una proprietà che definisce la posizione di un elemento (div, paragrafo, immagine, ecc.)
+        in una pagina html. Risulta essere fondamentale per il layout del nostro sito quando sarà visualizzato
+        da molti potenziali visitatori. <br>
+        I modi che possimao usare con la proprietà position sono 5:
+        <ul style="margin-left:20px"><b>
+          <li>static</li>
+          <li>relative</li>
+          <li>fixed</li>
+          <li>absolute</li>
+          <li>sticky</li>
+        </ul></b>
+        <hr>
+      </p>
+    </head>
+    <h3><i>Position: static</i></h3>
+    <p>E' la posizione data in automatico per default ad ogni elemento html. I vari paragrafi o immagini del nostro
+      documento vengono posizionati secondo il flusso normale della pagina html.
+      Attraverso i comandi <i>margin-left, margin-right, margin-top, margin-bottom </i> possiamo spostare
+      il nostro elemento in qualunque punto dello schermo<br> 
+      Esempio di codice html: 
+      <div class="stato" style="height:840px;">
+        &#60;h1&#62;&nbsp <span class="text">divertiamoci con il position static</span> &nbsp&#60;/h1&#62;<br>
+        &#60;div style="border:2px solid yellow; height:200px; width:500px;"&#62;<br>
+          &nbsp&nbsp &#60;div style="position:static;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp border:1px solid red;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp height:100px;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp width:200px;<br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp margin-top:20px; margin-left:20px&#62;
+          <span class="text"> sono un contenitore con posizione static</span><br>
+          &nbsp&nbsp &#60;/div&#62;<br>
+        <span class="text"> ciao sono nel div con bordo giallo</span><br>
+        &#60;/div&#62;<br><br>
+        <span style="color:white">Produzione del layout:</span><br><br>
+        <h2 class="text">divertiamoci con il position static</h2>
+        <div style="border:2px solid yellow; height:20%; width:90%;" class="text">
+          <div class="static text">Ciao sono un contenitore con posizione static</div>
+        ciao sono nel div con bordo giallo
+        </div>
+      </div>
+      <p>Notiamo che il div con bordo rosso si è fatto spazio all'interno del div con bordo giallo, schiacciando 
+        verso il basso la scritta "ciao sono nel div con bordo giallo". Infatti l'attributo <i>static</i> aggiusta
+        in automatico le lacune dovute alla sovrapposizione di elementi nello schermo. Questa meccanica di layout
+        a volte potrebbe essere invalidante per il nostro progetto di view, quindi vengono in nostro aiuto gli attributi 
+        <i>relative</i> e <i>absolute</i> che vedremo prossimamente. </p>
+    </p>
+    <hr>
+
+    <h3><i>Position: relative</i></h3>
+    <p>L'elemento viene posizionato nello schetmo tramite i comandi <b>left, right, top e bottom.</b>
+      Gli altri contenuti che seguono non verranno adattati al posizionamento dall'elemento con attributo relative
+      ma si sovrapponeranno al bordo del contenitore con position=relative.<br> 
+      Esempio di codice html: 
+      <div class="stato" style="height:840px;">
+        &#60;h1&#62;&nbsp<span class="text"> divertiamoci con il position relative</span> &nbsp&#60;/h1&#62;<br>
+        &#60;div style="border:2px solid yellow; height:200px; width:500px;"&#62; <br>
+          &nbsp&nbsp &#60;div style="position:relative;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp border:1px solid red;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp height:100px;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp width:200px;<br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp top:20px; left:20px&#62;
+          <span class="text"> sono un contenitore con posizione relative</span><br>
+          &nbsp&nbsp &#60;/div&#62;<br>
+        <span class="text"> ciao sono nel div con bordo giallo</span><br>
+        &#60;/div&#62;<br><br>
+        <span style="color:white">Produzione del layout:</span><br><br>
+        <h2 class="text">divertiamoci con il position relative</h2>
+        <div style="border:2px solid yellow; height:20%; width:90%;" class="text">
+          <div class="relative text">Ciao sono un contenitore con posizione relative</div>
+        ciao sono nel div con bordo giallo
+        </div>
+      </div>
+      <p>Notiamo subito che il div con il bordo rosso è andato a sovrapporsi brutalmente con il contenuto del div a bordo
+        giallo, infatti gli elementi con position relative non vanno a spostare gli elementi successivi in maniera
+        dinamica come per l'atributo static.
+      </p>
+    </p>
+    <hr>
+
+    <h3><i>Position: absolute</i></h3>
+    <p>L'elemento che è posizionato con l'attributo <i>absolute</i> ha come riferimento il div padre, cioè il
+      div dove tale elemento è contenuto e non il body del documento (dove <i>left:0px</i> e <i>top:0px</i> 
+      equivale al punto in alto all'estrema sinistra).<br>
+      Dopo l'inserimento di un div con posizione absolute, tutti gli altri elementi già presenti non subiranno
+      nessun spostamento e si potranno verificare delle sovrapposizioni di contenuti. 
+      E' importantissimo attribuire al div padre la proprietà <i>position:<b>relative.</b></i><br> 
+      Esempio di codice html: 
+      <div class="stato" style="height:840px;">
+        &#60;h1&#62;&nbsp<span class="text"> divertiamoci con il position absolute</span> &nbsp&#60;/h1&#62;<br>
+        &#60;div style="border:2px solid yellow; height:200px; width:500px; position:relative"&#62; <br>
+          &nbsp&nbsp &#60;div style="position:absolute;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp border:1px solid red;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp height:100px;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp width:200px;<br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp top:30px; left:30px&#62;
+          <span class="text"> sono un contenitore con posizione absolute</span><br>
+          &nbsp&nbsp &#60;/div&#62;<br>
+        <span class="text"> ciao sono nel div con bordo giallo</span><br>
+        &#60;/div&#62;<br><br>
+        <span style="color:white">Produzione del layout:</span><br><br>
+        <h2 class="text">divertiamoci con il position absolute</h2>
+        <div style="border:2px solid yellow; height:15%; width:90%; position:relative;" class="text">
+          <div class="absolute text">Ciao sono un contenitore con posizione absolute</div>
+        ciao sono nel div con bordo giallo
+        </div>
+      </div>
+      <p>Notiamo che il contenuto del div con bordo giallo è stato mandato prima del contenuto del div
+        con bordo rosso, ma se analizziamo il codice html, dovrebbe essere il contrario.<br>
+        Questo succede perchè gli elementi con position absolute non si fanno spazio nel documento 
+        ma si intromettono sovrapponendosi agli alri elementi senza creare la loro area ed i loro spazi.
+      </p>
+    </p>
+    <hr>
+
+    <h3><i>Position: fixed</i></h3>
+    <p>E' il div con il bordo rosso e sfondo marrone che è presente da sempre in questa pagina in basso a destra.<br>
+      Questo tipo di elemento ha la proprietà di non scorrere come tutti gli altri contenuti della schermata
+      ma rimane appunto fisso e sempre in vista, sovrapponendosi agli altri elementi.
+      Le proprietà top, right, bottom e left vengono utilizzate per posizionare l'elemento.
+      <br> 
+      Esempio di codice html: 
+      <div class="stato">
+        &#60;h1&#62;&nbsp<span class="text"> divertiamoci con il position fixed</span> &nbsp&#60;/h1&#62;<br>
+        &#60;div style="border:2px solid yellow; height:200px; width:500px;"&#62; <br>
+          &nbsp&nbsp &#60;div style="position:fixed;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp border:3px solid red;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp height:8%;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp width:40%;<br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp bottom:10px; right:10px&#62;
+          <span class="text"> sono un contenitore con posizione fixed</span><br>
+          &nbsp&nbsp &#60;/div&#62;<br>
+        <span class="text"> ciao sono nel div con bordo giallo</span><br>
+        &#60;/div&#62;<br><br>
+        <span style="color:white">Produzione del layout:</span><br><br>
+        <h2 class="text">divertiamoci con il position fixed</h2>
+        <div style="border:2px solid yellow; height:20%; width:90%;" class="text">
+          <div class="fixed text">Ciao sono un contenitore fixed</div>
+        ciao sono nel div con bordo giallo
+        </div>
+      </div>
+    </p>
+    <hr>
+
+    <h3><i>Position: sticky</i></h3>
+    <p>L'elemento sticky segue il flusso normale di tutti gli altri elementi quando si scende la pagina
+      verso il basso.<br>
+      Quando srolliamo una pagina di un sito verso il basso per scoprire i contenuti posizionati nel basso
+      del documento, l'elemento sticky non scomparirà nella parte alta della pagina ma si fermerà in posizione
+      fixed ad una linea di altezza che impostiamo con l'attributo <i>top.</i> <br> 
+      Esempio di codice html: 
+      <div class="stato">
+        &#60;h1&#62;&nbsp<span class="text"> divertiamoci con il position sticky</span> &nbsp&#60;/h1&#62;<br>       
+          &nbsp&nbsp &#60;div style="position: -webkit-sticky;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp position: sticky;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp top: 10px;<br> 
+          &nbsp&nbsp&nbsp&nbsp&nbsp padding: 5px;<br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp background-color: #199c19;<br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp border: 5px solid #82e685;&#62;<br>
+          &nbsp&nbsp &#60;/div&#62;<br><br>
+        <span style="color:white">Produzione del layout:</span><br><br>
+        <h2 class="text">divertiamoci con il position sticky</h2>                      
+      </div>
+      <div class="sticky text">Ciao sono un contenitore sticky
+      </div>    
+    </p>
+    <h4 style="margin-top:100px;">
+      Continua a scorrere verso il basso per controllare l'effetto che 
+      position sticky attribuisce alla barra con sfondo verde scuro.
+      Tale barra quando arriva alla posizione top di 10 px (valore top 
+      che possiamo cambiare nel codice html) si ferma e passa in position fixed autonomamente.<br>
+      Questa proprietà potrebbe essere usata per inserire nel sito un menù con la
+      modalità di essere sempre in vista.</h4>
+      <form method="post" action="sendgrid/contatti.php">
+        <div class="mb-3" style="margin-top:100px;">       
+          <label for="exampleFormControlInput1" class="form-label"><h2>Email</h2></label>
+          <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label"><h2>Lascia un messaggio</h2> </label>
+          <textarea name="testo" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+          <input style="width:150px; background-color:cadetblue;" type="submit" name="invia" value="invia" class="form-control">
+        </div>
+      </form>
+    <div style="margin-bottom: 1500px;"></div>    
+  </div> 
+</body>
+</html>
